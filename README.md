@@ -41,10 +41,16 @@ Interfaces
 ![image](https://user-images.githubusercontent.com/38001274/200128890-671acaab-c15c-4db3-93f0-066ff918904e.png)
 
 
-## CQS
+## CQS - Command and Query 
 
-### Single DB CQS
+<https://en.wikipedia.org/wiki/Command%E2%80%93query_separation>
 
-### 2 DB CQS
+### Variants
 
-### Event Sourcing CQS
+- Single DB CQS
+- 2 DB CQS
+- Event Sourcing CQS
+
+## Information
+
+- Screaming Architecture: <https://levelup.gitconnected.com/what-is-screaming-architecture-f7c327af9bb2>
