@@ -4,6 +4,8 @@ Based on Mathew Renze's Pluralsight course:  <https://app.pluralsight.com/librar
 
 Source Code: https://github.com/matthewrenze/clean-architecture-demo
 
+And Ardalis: https://www.youtube.com/watch?v=tYoqmL6e4oY
+
 ## History
 
 ### Classic 3 Layer
@@ -50,6 +52,11 @@ Interfaces
 - Single DB CQS
 - 2 DB CQS
 - Event Sourcing CQS
+
+## Unit Testing
+
+![image](https://user-images.githubusercontent.com/38001274/200137405-897b22b6-d97e-45ed-a0d0-ed116d161e13.png)
+
 
 ## Information
 
