@@ -1,6 +1,8 @@
 # Clean Architecture
 
 Based on:  <https://app.pluralsight.com/library/courses/clean-architecture-patterns-practices-principles/>
+By Mathew Renze
+Source Code: https://github.com/matthewrenze/clean-architecture-demo
 
 ## History
 
