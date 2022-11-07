@@ -69,6 +69,26 @@ UI          |             |
 
 Book: Succeeding with agile
 
+| costs | Type          | number of tests  | 
+| :---: | :-----------: | :--------------: | 
+| ++++  | Manual tests  | +                | 
+| +++   | UI tests      | ++               | 
+| ++    | Service tests | +++              | 
+| +     | Unit tests    | ++++             | 
+
+### Acceptance Tests
+
+- Verify functionality
+- Language of business
+- Criteria of completeness
+- Full tests are problematic
+
+How
+
+- Eliminate UI
+- Use In-Memory DB 
+- Mock Infrastructure and Cross-Cutting Concernes
+
 ## Information
 
 - Screaming Architecture: <https://levelup.gitconnected.com/what-is-screaming-architecture-f7c327af9bb2>
