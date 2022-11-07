@@ -87,7 +87,16 @@ How
 
 - Eliminate UI
 - Use In-Memory DB 
-- Mock Infrastructure and Cross-Cutting Concernes
+- Mock Infrastructure 
+- Mock Cross-Cutting concernes
+
+What
+
+- Focus on essential
+- Minimize coded UI-Test
+- Smoke tests instead
+- Minimize manual tests
+- Exploratory tests instead
 
 ## Information
 
