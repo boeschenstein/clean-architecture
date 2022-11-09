@@ -1,6 +1,6 @@
 # Clean Architecture
 
-Based on Mathew Renze's Pluralsight course:  <https://app.pluralsight.com/library/courses/clean-architecture-patterns-practices-principles/>
+Based on Mathew Renze's Pluralsight course (2016):  <https://app.pluralsight.com/library/courses/clean-architecture-patterns-practices-principles/>
 
 Source Code: https://github.com/matthewrenze/clean-architecture-demo
 
@@ -103,3 +103,16 @@ What
 - Screaming Architecture: <https://levelup.gitconnected.com/what-is-screaming-architecture-f7c327af9bb2>
 - Last Responsible Moment (LRM: wait as long as you can)
 - Evolutionary Architecture
+- Books
+    - Martin Fowler: Patterns of Enterprise Application Architecture
+    - Uncle Bob: Clean Architecture
+    - Eric Evans: Domain-Driven Design
+- PluralSight
+    - Julie Lerman, Ardalis: https://app.pluralsight.com/library/courses/fundamentals-domain-driven-design/
+    - https://app.pluralsight.com/library/courses/domain-driven-design-in-practice
+    - Dino Esposito: https://app.pluralsight.com/library/courses/modern-software-architecture-domain-models-cqrs-event-sourcing
+    - https://app.pluralsight.com/paths/skill/microservices-architecture
+- Web
+    - Martin Fowler: https://martinfowler.com
+    - Greg Young: CQRS, Eventsourcing
+    - Udi Dahan: https://udidahan.com
