@@ -118,6 +118,39 @@ Source Code Dependencies:
 
 >Report Generator -> Data Service <|- Repository -> Database
 
+## Create Solution
+
+```PowerShell
+dotnet new classlib --name MyApp.MyDomain
+
+dotnet new classlib --name MyApp.MyDomain.MyServices
+dotnet add MyApp.MyDomain.MyServices reference MyApp.MyDomain
+
+dotnet new classlib --name MyApp.Infrastructure.MyDB
+# Dependency Inversion: see Domain centric architectures (Clean Architecture, DDD and others)
+dotnet add MyApp.Infrastructure.MyDB reference MyApp.MyDomain.MyServices
+
+dotnet new webapi --name MyApp.MyWebApp
+dotnet add MyApp.MyWebApp reference MyApp.MyDomain.MyServices
+dotnet add MyApp.MyWebApp reference MyApp.Infrastructure.MyDB
+
+# Test project
+dotnet new console --name MyApp.MyTest
+dotnet add MyApp.MyTest reference MyApp.MyDomain.MyServices
+dotnet add MyApp.MyTest reference MyApp.Infrastructure.MyDB
+dotnet add MyApp.MyTest reference MyApp.MyWebApp
+dotnet add MyApp.MyTest package xUnit
+dotnet add MyApp.MyTest package Moq
+
+# Solution
+dotnet new sln --name MyApp
+dotnet sln add MyApp.MyDomain
+dotnet sln add MyApp.MyDomain.MyServices
+dotnet sln add MyApp.Infrastructure.MyDB
+dotnet sln add MyApp.MyWebApp
+dotnet sln add MyApp.MyTest
+```
+
 ## Information
 
 - Screaming Architecture: <https://levelup.gitconnected.com/what-is-screaming-architecture-f7c327af9bb2>
