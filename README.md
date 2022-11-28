@@ -4,9 +4,11 @@ Based on Mathew Renze's Pluralsight course (2016):  <https://app.pluralsight.com
 
 Source Code: https://github.com/matthewrenze/clean-architecture-demo
 
-And Ardalis: https://www.youtube.com/watch?v=tYoqmL6e4oY
+and Ardalis: https://www.youtube.com/watch?v=tYoqmL6e4oY
 
-## History
+## See also
+
+<https://github.com/boeschenstein/ddd>
 
 ### Classic 3 Layer
 
@@ -42,7 +44,6 @@ Interfaces
 
 ![image](https://user-images.githubusercontent.com/38001274/200128890-671acaab-c15c-4db3-93f0-066ff918904e.png)
 
-
 ## CQS - Command and Query 
 
 <https://en.wikipedia.org/wiki/Command%E2%80%93query_separation>
@@ -59,6 +60,63 @@ Interfaces
 
 ## Layers
 
+| Layer | Level | Short                  | Other Names                                            | Function                    | Hints
+| ---   | ---   | ---                    |           ---                                          | ---                         | ---
+| L4    | low   | Frameworks & Drivers   | Web, UI, DB, Devices, External Interfaces, ServiceHost |                             | not much code
+| L3    |       | Interface Adapters     | Controller, Gateway, Presenter                         | Data Conversion, Formatting |
+| L2    |       | Use Cases              | Interactors                                            | Application Business Rules  | Services 
+| L1    | high  | Entities               | Domain                                                 | Enterprise Business Rules   | most stable (changes rarely)
+
+- If you need more layers: add it
+- Cross-Cutting concerns: across all layers
+- use Dependency Inversion for external devices (DB, ...)
+
+### Examples
+
+Each line is a C# project:
+
+```
+Example 1:
+	L4 Tests
+	L4 Presentation
+	L4 Persistence, Infrastructure
+	L2+L3 Application
+	L1 Entities: Domain
+
+Example 2:
+	L4 CLI
+	L4 IO
+	L1+L2+L3 Core
+
+Example 3:
+	L4 Tests
+	L4 Frontend, Presentation UI, Web
+	L4 Infrastructure, Persistance, IO
+	L2+L3 Domain.Services
+	L1 Entities: Domain
+
+Example 4:
+	L4 Tests
+	L4 Frontend, Presentation UI, Web
+	L4 Infrastructure, Persistance, IO
+	L4 Hangfire (ServiceHost)
+	L3 Application Services
+	L2 Domain Services
+	L1 Entities, Domain, DomainModel
+```
+
+## UML
+
+UML Class Diagram <https://en.wikipedia.org/wiki/Class_diagram>
+
+Source Code Dependencies:
+
+```
+-->  Open arrowheads are using relationships. 
+-|>  Closed arrowheads are implements or inheritance relationships. "Dependency Inversion"
+```
+
+>Report Generator -> Data Service <|- Repository -> Database
 
 ## Information
 
@@ -68,13 +126,6 @@ Interfaces
 - Books
     - Martin Fowler: Patterns of Enterprise Application Architecture
     - Uncle Bob: Clean Architecture
-    - Eric Evans: Domain-Driven Design
-- PluralSight
-    - Julie Lerman, Ardalis: https://app.pluralsight.com/library/courses/fundamentals-domain-driven-design/
-    - https://app.pluralsight.com/library/courses/domain-driven-design-in-practice
-    - Dino Esposito: https://app.pluralsight.com/library/courses/modern-software-architecture-domain-models-cqrs-event-sourcing
-    - https://app.pluralsight.com/paths/skill/microservices-architecture
 - Web
     - Martin Fowler: https://martinfowler.com
-    - Greg Young: CQRS, Eventsourcing
     - Udi Dahan: https://udidahan.com
