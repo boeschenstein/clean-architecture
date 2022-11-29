@@ -130,16 +130,16 @@ dotnet new classlib --name MyApp.Infrastructure.MyDB
 # Dependency Inversion: see Domain centric architectures (Clean Architecture, DDD and others)
 dotnet add MyApp.Infrastructure.MyDB reference MyApp.MyDomain.MyServices
 
-dotnet new webapi --name MyApp.MyWebApp
-dotnet add MyApp.MyWebApp reference MyApp.MyDomain.MyServices
-dotnet add MyApp.MyWebApp reference MyApp.Infrastructure.MyDB
+dotnet new webapi --name MyApp.MyWebApi
+dotnet add MyApp.MyWebApi reference MyApp.MyDomain.MyServices
+dotnet add MyApp.MyWebApi reference MyApp.Infrastructure.MyDB
 
 # Test project
-dotnet new console --name MyApp.MyTest
+dotnet new xunit --name MyApp.MyTest
 dotnet add MyApp.MyTest reference MyApp.MyDomain.MyServices
 dotnet add MyApp.MyTest reference MyApp.Infrastructure.MyDB
-dotnet add MyApp.MyTest reference MyApp.MyWebApp
-dotnet add MyApp.MyTest package xUnit
+dotnet add MyApp.MyTest reference MyApp.MyWebApi
+# dotnet add MyApp.MyTest package xUnit
 dotnet add MyApp.MyTest package Moq
 
 # Solution
@@ -147,8 +147,14 @@ dotnet new sln --name MyApp
 dotnet sln add MyApp.MyDomain
 dotnet sln add MyApp.MyDomain.MyServices
 dotnet sln add MyApp.Infrastructure.MyDB
-dotnet sln add MyApp.MyWebApp
+dotnet sln add MyApp.MyWebApi
 dotnet sln add MyApp.MyTest
+
+# ADD NEW ANGULAR PROJECT
+# 1) Create new Project, using "Standalone TypeScript Angular Template" in Visual Studio, add it (manually) to sln
+# 2) port of 'target' in MyAngularApp\src\proxy.conf.js must be equal to port of https entry of MyWebApi in MyWebApi\Properties\launchSettings.json
+# Details: https://learn.microsoft.com/en-us/visualstudio/javascript/tutorial-asp-net-core-with-angular?view=vs-2022
+
 ```
 
 ## Information
