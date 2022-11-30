@@ -44,11 +44,16 @@ Interfaces
 
 ![image](https://user-images.githubusercontent.com/38001274/200128890-671acaab-c15c-4db3-93f0-066ff918904e.png)
 
-## CQS - Command and Query 
+## CQS - Command and Query Separation
 
-<https://en.wikipedia.org/wiki/Command%E2%80%93query_separation>
+- Commands: change data (sideeffects)
+- Queries: no data change allowed (idempotent)
+- Where to use? everywhere: API, services, ...
+- Theory: <https://martinfowler.com/bliki/CommandQuerySeparation.html>
+- Examples: <https://khalilstemmler.com/articles/oop-design-principles/command-query-separation/>
+- Wikipedia: <https://en.wikipedia.org/wiki/Command%E2%80%93query_separation>
 
-### Variants
+### CQS in Database Access - Variants
 
 - Single DB CQS
 - 2 DB CQS
