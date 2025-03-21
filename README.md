@@ -173,3 +173,4 @@ dotnet sln add MyApp.MyTest
 - Web
     - Martin Fowler: https://martinfowler.com
     - Udi Dahan: https://udidahan.com
+- fix reference issue <https://youtu.be/jeUHyGjnTwo?feature=shared>
